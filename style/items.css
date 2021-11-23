@@ -1,20 +1,22 @@
 .items {
   width: auto;
   padding: 50px;
-  justify-content: space-between;
 }
 
 .item {
   width: 60vh;
   position: relative;
   flex: 1 1 auto;
+  margin-bottom: 60px;
 }
 
 .item_card {
   display: flex;
   margin: 20px auto;
   position: relative;
-  width: 80vh:
+  margin-bottom: 60px;
+  margin-top: 60px;
+  border-bottom: 1px solid rgba(154, 136, 102, 0.5);
 }
 
 .title {
@@ -24,13 +26,12 @@
 
 .price-container {
   display: flex;
-  justify-content: space-between;
   margin: 10px 0;
 }
 
 .price-block {
   margin-bottom: 10px;
-  padding-right: 10px;
+  padding-right: 50px;
   font-family: "Rajdhani", sans-serif;
 }
 
@@ -66,4 +67,33 @@
   object-fit: contain;
   -o-object-position: center;
   object-position: center;
+}
+
+/* formulaire */
+
+form {
+  margin: auto;
+  width: 50%;
+}
+
+.input-text {
+  background-color: #1A1A1A;
+  padding: 1em;
+  border: none;
+  border-radius: 5px;
+  color: rgba(154, 136, 102, 1);
+  width: 70%;
+  outline-style: none;
+  font-family: "Raleway", sans-serif;
+}
+
+.input-submit {
+  background-color: #1A1A1A;
+  padding: 1em;
+  border: none;
+  border-radius: 5px;
+  color: rgba(154, 136, 102, 1);
+  width: auto;
+  outline-style: none;
+  font-family: "Raleway", sans-serif;
 }

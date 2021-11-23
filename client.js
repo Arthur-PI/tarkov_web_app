@@ -4,7 +4,7 @@ let url =
 fetch(url).then(function(response) {
   response.text().then(function(text) {
     JSON.parse(text).forEach((element, index) => {
-      if(index < 60){
+      if(index<20){
         addItems(element);
       }
     });
@@ -12,7 +12,6 @@ fetch(url).then(function(response) {
 });
 
 function addItems(data) {
-  console.dir(data);
   /*
        <div class="item">
           <img src="https://cdn.glitch.me/4132c70b-5a02-42f3-9e09-316dc9c35ecc%2F7169928a-6328-45f3-bb05-8dca637842d5.image.png?v=1637432211601" />
@@ -159,7 +158,12 @@ function addItems(data) {
   
   container.appendChild(item_card);
 }
-
-function addItemsv2(data){
-    
-}
+console.log('cc')
+var input = document.getElementById('input');
+input.addEventListener("change", ()=>{
+  console.log(input.value)
+});
+var submit = document.getElementById('submit');
+submit.addEventListener("click", ()=>{
+  console.log(input.value)
+});
