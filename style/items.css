@@ -1,21 +1,69 @@
 .items {
   width: auto;
   padding: 50px;
-  display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 .item {
-  background-color: #1A1A1A;
-  width: 25%;
-  max-width: 100px;
-  min-width: 80px;
-  padding: 15px;
-  margin-bottom: 20px;
+  width: 60vh;
+  position: relative;
+  flex: 1 1 auto;
 }
 
-.item p{
-  margin: 0;
-  padding: 0;
+.item_card {
+  display: flex;
+  margin: 20px auto;
+  position: relative;
+  width: 80vh:
+}
+
+.title {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.price-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.price-block {
+  margin-bottom: 10px;
+  padding-right: 10px;
+  font-family: "Rajdhani", sans-serif;
+}
+
+.price {
+  font-family: "Rajdhani", sans-serif;
+  color: white;
+}
+
+.updated-block {
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+}
+
+.img-content {
+  position: relative;
+  padding-left: 20px;
+  width: 20vh;
+}
+
+.icon {
+  position: absolute;
+  right: 7px;
+  top: 7px;
+  width: 70px;
+  height: auto;
+}
+
+.back {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  -o-object-fit: contain;
+  object-fit: contain;
+  -o-object-position: center;
+  object-position: center;
 }

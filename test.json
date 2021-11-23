@@ -1,0 +1,27 @@
+[
+  {
+    "uid": "5ac84494-465a-424a-b36e-fe22869ba5ec",
+    "name": "Physical bitcoin",
+    "tags": ["Barter"],
+    "shortName": "0.2BTC",
+    "price": 363147,
+    "basePrice": 123577,
+    "avg24hPrice": 370337,
+    "avg7daysPrice": 374164,
+    "traderName": "Therapist",
+    "traderPrice": 363147,
+    "traderPriceCur": "₽",
+    "updated": "2021-11-23T07:30:06.526Z",
+    "slots": 1,
+    "diff24h": -1.94,
+    "diff7days": -2.94,
+    "icon": "https://cdn.tarkov-market.com/images/items/physical_bitcoin_(btc)_sm.png",
+    "link": "https://tarkov-market.com/item/physical_bitcoin_(btc)",
+    "wikiLink": "https://escapefromtarkov.gamepedia.com/Physical_bitcoin",
+    "img": "https://cdn.tarkov-market.com/images/items/physical_bitcoin_(btc)_sm.png",
+    "imgBig": "https://cdn.tarkov-market.com/images/items/physical_bitcoin_(btc)_lg.png",
+    "bsgId": "59faff1d86f7746c51718c9c",
+    "isFunctional": true,
+    "reference": "https://www.patreon.com/tarkov_market"
+  }
+]
