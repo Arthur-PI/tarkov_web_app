@@ -22,6 +22,10 @@ footer {
   transform: translateX(-50%);
 }
 
+ul{
+  padding: 0px;
+}
+
 footer img {
   width: 150px;
 }

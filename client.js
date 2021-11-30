@@ -168,7 +168,7 @@ document.getElementById("envoi").addEventListener("click", event => {
   }
 
   items.forEach((element, index) => {
-    if(element.name.includes(document.getElementById("search").value)){
+    if(element.name.toLowerCase().includes(document.getElementById("search").value.toLowerCase())){
       addItems(element);
       console.log(element.name)
     }
@@ -176,8 +176,12 @@ document.getElementById("envoi").addEventListener("click", event => {
 });
 
 document.getElementById("search").addEventListener("keydown", event => {
+  console.log("click touche")
   if (event.keyCode === 13) {
-    //checks whether the pressed key is "Enter"
+    console.log("click enter")
+   event.preventDefault(); // stop our form submission from refreshing the page
+  console.log(document.getElementById("search").value);
+
     const e = document.getElementById("items");
     var child = e.lastElementChild;
     while (child) {
@@ -186,10 +190,10 @@ document.getElementById("search").addEventListener("keydown", event => {
     }
 
     items.forEach((element, index) => {
-    if(element.name.toLowerCase().includes(document.getElementById("search").value.toLowerCase())){
-      addItems(element);
-      console.log(element.name)
-    }
-  });
+      if(element.name.toLowerCase().includes(document.getElementById("search").value.toLowerCase())){
+        addItems(element);
+        console.log(element.name)
+      }
+    });
   }
 });

@@ -1,24 +1,71 @@
 <!DOCTYPE html>
 <head>
   <title>Maps</title>
-  <link rel="stylesheet" href="style/reset.css" />
   <link rel="stylesheet" href="style/global.css" />
   <link rel="stylesheet" href="style/maps.css" />
 </head>
 <html>
-  <body>
-    <div id="main">
-      <header class="header">
-        <h1>Escape From Tarkov Wiki</h1>
-        <div>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="items.html">Items</a></li>
-            <li><a href="maps.html">Maps</a></li>
-            <li><a href="apropos.html">A propos</a></li>
-          </ul>
+<body>
+  <div id="main">
+    <header class="header">
+      <h1>Escape From Tarkov Wiki</h1>
+      <div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="items.html">Items</a></li>
+          <li><a href="maps.html">Maps</a></li>
+          <li><a href="apropos.html">A propos</a></li>
+        </ul>
+      </div>
+    </header>
+    <div>
+      <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <img src="assets/douanes.png" style="width:100%">
         </div>
-      </header>
+
+        <div class="mySlides fade">
+          <img src="assets/littoral.png" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="assets/usine.jpeg" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="assets/bois.png" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="assets/labs.png" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="assets/interchange.png" style="width:100%">
+        </div>
+
+        <div class="mySlides fade">
+          <img src="assets/reserve.png" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+      </div>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)">Douanes</span> 
+        <span class="dot" onclick="currentSlide(2)">Littoral</span> 
+        <span class="dot" onclick="currentSlide(3)">Usine</span>
+        <span class="dot" onclick="currentSlide(4)">Bois</span> 
+        <span class="dot" onclick="currentSlide(5)">Labo</span> 
+        <span class="dot" onclick="currentSlide(6)">Echangeur</span> 
+        <span class="dot" onclick="currentSlide(7)">Reserve</span>  
+      </div>
     </div>
-  </body>
+  </div>
+  <script type="text/javascript" src="maps.js"></script>
+</body>
 </html>
