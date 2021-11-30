@@ -4,7 +4,6 @@
   <link rel="stylesheet" href="style/reset.css" />
   <link rel="stylesheet" href="style/global.css" />
   <link rel="stylesheet" href="style/items.css" />
-  <script type="text/javascript" src="client.js"></script>
 </head>
 <html>
   <body>
@@ -23,8 +22,8 @@
       <p>
         Page permettant de répertorier tous les items du jeu avec la possiblité de pouvoir faire une recherche
       </p>
-      <input id="input" class="input-text" type="text" />
-      <input id="submit" type="submit" />
+      <input id="search" class="input-text" type="text" name="input" autocomplete="off" required />
+      <input id="envoi"  class="input-submit"type="submit" name="submit" autocomplete="off" required />
       <div id="items" class="items">
         
       </div>
@@ -32,4 +31,6 @@
       </script>
     </div>
   </body>
+    <script type="text/javascript" src="client.js"></script>
+
 </html>

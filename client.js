@@ -1,12 +1,15 @@
 let url =
   "https://tarkov-market.com/api/v1/items/all?&x-api-key=Cgi4Dt1f4hCO4xTN";
 
+let items = [];
+
 fetch(url).then(function(response) {
   response.text().then(function(text) {
     JSON.parse(text).forEach((element, index) => {
-      if(index<20){
+      if (index < 20) {
         addItems(element);
       }
+      items.push(element);
     });
   });
 });
@@ -24,7 +27,7 @@ function addItems(data) {
         </div>
       */
   const container = document.getElementById("items");
-  
+
   /*
   var item = document.createElement("div");
   item.classList.add("item");
@@ -37,19 +40,18 @@ function addItems(data) {
   item.appendChild(image);
   item.appendChild(p);
   */
-  
-  
+
   //item
   var item = document.createElement("div");
   item.classList.add("item");
-  
+
   //title
   var title = document.createElement("div");
   title.classList.add("title");
   var h1 = document.createElement("h3");
   h1.innerHTML = data.name;
   title.appendChild(h1);
-  
+
   //price
   var price = document.createElement("div");
   price.classList.add("price-container");
@@ -72,7 +74,7 @@ function addItems(data) {
   var info21 = document.createElement("div");
   info21.innerHTML = "Prix par slots";
   var info22 = document.createElement("div");
-  info22.innerHTML = data.price/data.slots+ " ₽";
+  info22.innerHTML = data.price / data.slots + " ₽";
   info22.classList.add("price");
   var info23 = document.createElement("div");
   info23.innerHTML = data.slots + "(slots)";
@@ -85,12 +87,12 @@ function addItems(data) {
   var info31 = document.createElement("div");
   info31.innerHTML = "Prix moyen 24h";
   var info32 = document.createElement("div");
-  info32.innerHTML = data.avg24hPrice+ " ₽";
+  info32.innerHTML = data.avg24hPrice + " ₽";
   info32.classList.add("price");
   var info33 = document.createElement("div");
   info33.innerHTML = "Prix moyen 7 jours";
   var info34 = document.createElement("div");
-  info34.innerHTML = data.avg7daysPrice+ " ₽";
+  info34.innerHTML = data.avg7daysPrice + " ₽";
   info34.classList.add("price");
   price3.appendChild(info31);
   price3.appendChild(info32);
@@ -103,30 +105,28 @@ function addItems(data) {
   var info41 = document.createElement("div");
   info41.innerHTML = "Différence de prix 24h";
   var info42 = document.createElement("div");
-  info42.innerHTML = data.diff24h+ " %";
+  info42.innerHTML = data.diff24h + " %";
   info42.classList.add("price");
-  if(data.diff24h < 0){
+  if (data.diff24h < 0) {
     info42.style.color = "red";
-  }
-  else{
+  } else {
     info42.style.color = "green";
   }
   var info43 = document.createElement("div");
   info43.innerHTML = "Différence de prix 7 jours";
   var info44 = document.createElement("div");
-  info44.innerHTML = data.diff7days+ " %";
+  info44.innerHTML = data.diff7days + " %";
   info44.classList.add("price");
-  if(data.diff7days < 0){
+  if (data.diff7days < 0) {
     info44.style.color = "red";
-  }
-  else{
+  } else {
     info44.style.color = "green";
   }
   price4.appendChild(info41);
   price4.appendChild(info42);
   price4.appendChild(info43);
   price4.appendChild(info44);
-  
+
   //item
   price.appendChild(price1);
   price.appendChild(price2);
@@ -134,8 +134,7 @@ function addItems(data) {
   price.appendChild(price4);
   item.appendChild(title);
   item.appendChild(price);
-  
-  
+
   //img
   var img_content = document.createElement("div");
   img_content.classList.add("img_content");
@@ -148,22 +147,49 @@ function addItems(data) {
   img_content.appendChild(imgIcon);
   img_content.appendChild(imgBack);
 
-  
-  
   //itemcard
   var item_card = document.createElement("div");
   item_card.classList.add("item_card");
-  item_card.appendChild(item)
-  item_card.appendChild(img_content)
-  
+  item_card.appendChild(item);
+  item_card.appendChild(img_content);
+
   container.appendChild(item_card);
 }
-console.log('cc')
-var input = document.getElementById('input');
-input.addEventListener("change", ()=>{
-  console.log(input.value)
+
+document.getElementById("envoi").addEventListener("click", event => {
+  event.preventDefault(); // stop our form submission from refreshing the page
+  console.log(document.getElementById("search").value);
+
+  const e = document.getElementById("items");
+  var child = e.lastElementChild;
+  while (child) {
+    e.removeChild(child);
+    child = e.lastElementChild;
+  }
+
+  items.forEach((element, index) => {
+    if(element.name.includes(document.getElementById("search").value)){
+      addItems(element);
+      console.log(element.name)
+    }
+  });
 });
-var submit = document.getElementById('submit');
-submit.addEventListener("click", ()=>{
-  console.log(input.value)
+
+document.getElementById("search").addEventListener("keydown", event => {
+  if (event.keyCode === 13) {
+    //checks whether the pressed key is "Enter"
+    const e = document.getElementById("items");
+    var child = e.lastElementChild;
+    while (child) {
+      e.removeChild(child);
+      child = e.lastElementChild;
+    }
+
+    items.forEach((element, index) => {
+    if(element.name.toLowerCase().includes(document.getElementById("search").value.toLowerCase())){
+      addItems(element);
+      console.log(element.name)
+    }
+  });
+  }
 });
