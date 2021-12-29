@@ -3,8 +3,8 @@ let url =
 
 let items = [];
 
-fetch(url).then(function(response) {
-  response.text().then(function(text) {
+fetch(url).then(function (response) {
+  response.text().then(function (text) {
     JSON.parse(text).forEach((element, index) => {
       if (index < 20) {
         addItems(element);
@@ -15,31 +15,7 @@ fetch(url).then(function(response) {
 });
 
 function addItems(data) {
-  /*
-       <div class="item">
-          <img src="https://cdn.glitch.me/4132c70b-5a02-42f3-9e09-316dc9c35ecc%2F7169928a-6328-45f3-bb05-8dca637842d5.image.png?v=1637432211601" />
-          <p>
-            blablablabla
-          </p>
-          <p>
-            blablablabla
-          </p>
-        </div>
-      */
   const container = document.getElementById("items");
-
-  /*
-  var item = document.createElement("div");
-  item.classList.add("item");
-  var image = new Image();
-  image.src = data.icon;
-  image.style.width = '100%'
-  image.style.height = 'auto'
-  var p = document.createElement("p");
-  p.innerHTML = data.name;
-  item.appendChild(image);
-  item.appendChild(p);
-  */
 
   //item
   var item = document.createElement("div");
@@ -156,7 +132,7 @@ function addItems(data) {
   container.appendChild(item_card);
 }
 
-document.getElementById("envoi").addEventListener("click", event => {
+document.getElementById("envoi").addEventListener("click", (event) => {
   event.preventDefault(); // stop our form submission from refreshing the page
   console.log(document.getElementById("search").value);
 
@@ -168,19 +144,23 @@ document.getElementById("envoi").addEventListener("click", event => {
   }
 
   items.forEach((element, index) => {
-    if(element.name.toLowerCase().includes(document.getElementById("search").value.toLowerCase())){
+    if (
+      element.name
+        .toLowerCase()
+        .includes(document.getElementById("search").value.toLowerCase())
+    ) {
       addItems(element);
-      console.log(element.name)
+      console.log(element.name);
     }
   });
 });
 
-document.getElementById("search").addEventListener("keydown", event => {
-  console.log("click touche")
+document.getElementById("search").addEventListener("keydown", (event) => {
+  console.log("click touche");
   if (event.keyCode === 13) {
-    console.log("click enter")
-   event.preventDefault(); // stop our form submission from refreshing the page
-  console.log(document.getElementById("search").value);
+    console.log("click enter");
+    event.preventDefault(); // stop our form submission from refreshing the page
+    console.log(document.getElementById("search").value);
 
     const e = document.getElementById("items");
     var child = e.lastElementChild;
@@ -190,9 +170,13 @@ document.getElementById("search").addEventListener("keydown", event => {
     }
 
     items.forEach((element, index) => {
-      if(element.name.toLowerCase().includes(document.getElementById("search").value.toLowerCase())){
+      if (
+        element.name
+          .toLowerCase()
+          .includes(document.getElementById("search").value.toLowerCase())
+      ) {
         addItems(element);
-        console.log(element.name)
+        console.log(element.name);
       }
     });
   }
