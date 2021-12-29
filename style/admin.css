@@ -1,19 +1,11 @@
-textarea {
-  display: block;
-  margin-top: 10px;
+#login-form {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#envoyer {
-  font-size: 1em;
-  margin-top: 10px;
-  padding: 5px;
-}
-
-.field {
-  margin-bottom: 20px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
 .input-text {
   background-color: #1a1a1a;
   padding: 1em;
@@ -21,7 +13,7 @@ textarea {
   border-radius: 5px;
   color: rgba(154, 136, 102, 1);
   width: 50%;
-  max-width: 300px;
+  max-width: 260px;
   outline-style: none;
   font-family: "Raleway", sans-serif;
   margin-bottom: 15px;
@@ -37,4 +29,21 @@ textarea {
   outline-style: none;
   cursor: pointer;
   font-family: "Raleway", sans-serif;
+}
+
+#messages {
+  display: none;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.message {
+  background-color: #1a1a1a;
+  padding: 1em;
+  border-radius: 5px;
+  min-width: 200px;
+  max-width: 400px;
+  margin: 15px;
 }

@@ -97,3 +97,9 @@
   outline-style: none;
   font-family: "Raleway", sans-serif;
 }
+
+p {
+  background-color: #1a1a1a;
+  padding: 1em;
+  border-radius: 5px;
+}
