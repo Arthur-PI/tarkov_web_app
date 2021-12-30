@@ -18,5 +18,6 @@ const send_message = (author, email, message) => {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   send_message(prenom.value, email.value, message.value);
-  login_form.reset();
+  alert("Message envoyé !")
+  form.reset();
 });
