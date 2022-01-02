@@ -37,7 +37,7 @@ function addItems(data) {
   var info1 = document.createElement("div");
   info1.innerHTML = "Prix";
   var info2 = document.createElement("div");
-  info2.innerHTML = data.price + " ₽";
+  info2.innerHTML = data.price + " $";
   info2.classList.add("price");
   var info3 = document.createElement("div");
   info3.innerHTML = "(Dernier prix le plus bas)";
@@ -50,7 +50,7 @@ function addItems(data) {
   var info21 = document.createElement("div");
   info21.innerHTML = "Prix par slots";
   var info22 = document.createElement("div");
-  info22.innerHTML = data.price / data.slots + " ₽";
+  info22.innerHTML = data.price / data.slots + " $";
   info22.classList.add("price");
   var info23 = document.createElement("div");
   info23.innerHTML = data.slots + "(slots)";
@@ -63,12 +63,12 @@ function addItems(data) {
   var info31 = document.createElement("div");
   info31.innerHTML = "Prix moyen 24h";
   var info32 = document.createElement("div");
-  info32.innerHTML = data.avg24hPrice + " ₽";
+  info32.innerHTML = data.avg24hPrice + " $";
   info32.classList.add("price");
   var info33 = document.createElement("div");
   info33.innerHTML = "Prix moyen 7 jours";
   var info34 = document.createElement("div");
-  info34.innerHTML = data.avg7daysPrice + " ₽";
+  info34.innerHTML = data.avg7daysPrice + " $";
   info34.classList.add("price");
   price3.appendChild(info31);
   price3.appendChild(info32);
@@ -79,7 +79,7 @@ function addItems(data) {
   var price4 = document.createElement("div");
   price4.classList.add("price-block");
   var info41 = document.createElement("div");
-  info41.innerHTML = "Différence de prix 24h";
+  info41.innerHTML = "Diff&eacuterence de prix 24h";
   var info42 = document.createElement("div");
   info42.innerHTML = data.diff24h + " %";
   info42.classList.add("price");
@@ -89,7 +89,7 @@ function addItems(data) {
     info42.style.color = "green";
   }
   var info43 = document.createElement("div");
-  info43.innerHTML = "Différence de prix 7 jours";
+  info43.innerHTML = "Diff&eacuterence de prix 7 jours";
   var info44 = document.createElement("div");
   info44.innerHTML = data.diff7days + " %";
   info44.classList.add("price");
